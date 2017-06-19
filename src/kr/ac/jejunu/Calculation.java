@@ -39,4 +39,13 @@ public class Calculation {
     public int getCount(int i) {
         return count[i];
     }
+
+    public int getMenuTotalPrice(){
+        int totalPrice = 0;
+        for(int i = 0 ; i < 6;i++){
+
+            totalPrice += getMenuTotalInformation(i);
+        }
+        return totalPrice;
+    }
 }

@@ -63,22 +63,23 @@ public class TouchCountEvent implements ActionListener {
                 calculation.minus(5);
                 break;
         }
-        refresh();
+        ExportInterfaceTotalMenuCalculation();
+        ExportInterfaceViewer();
     }
 
 
 
-    public void menuOnePrintCount(int i, JTextField totalNum){
-            int num = calculation.getCount(i);
-            totalNum.setText(num + "");
+    public void ExportInterfaceMenuPrintCount(int i, JTextField totalNum){
+        int num = calculation.getCount(i);
+        totalNum.setText(num + "");
     }
 
 
 
-    public int menuCalculation(int i, JTextField price_1){
+    public int ExportInterfaceSeveralMenuCalculation(int i, JTextField price){
         int menu_sum;
         menu_sum = calculation.getMenuTotalInformation(i);
-        price_1.setText(menu_sum + "");
+        price.setText(menu_sum + "");
 
         return menu_sum;
 
@@ -86,23 +87,40 @@ public class TouchCountEvent implements ActionListener {
 
 
 
-    public void refresh(){
-        int totalSum = 0;
+    public void ExportInterfaceTotalMenuCalculation(){
+        int totalSum;
+        totalSum = calculation.getMenuTotalPrice();
+       /* int totalSum = 0;
 
-        totalSum += menuCalculation(0, userMenuViewer.price_1);
-        menuOnePrintCount(0, userMenuViewer.totalNum_1);
-        totalSum += menuCalculation(1, userMenuViewer.price_2);
-        menuOnePrintCount(1, userMenuViewer.totalNum_2);
-        totalSum += menuCalculation(2, userMenuViewer.price_3);
-        menuOnePrintCount(2, userMenuViewer.totalNum_3);
-        totalSum += menuCalculation(3, userMenuViewer.price_4);
-        menuOnePrintCount(3, userMenuViewer.totalNum_4);
-        totalSum += menuCalculation(4, userMenuViewer.price_5);
-        menuOnePrintCount(4, userMenuViewer.totalNum_5);
-        totalSum += menuCalculation(5, userMenuViewer.price_6);
-        menuOnePrintCount(5, userMenuViewer.totalNum_6);
+        totalSum += ExportInterfaceSeveralMenuCalculation(0, userMenuViewer.price_1);
+        ExportInterfaceMenuPrintCount(0, userMenuViewer.totalNum_1);
+        totalSum += ExportInterfaceSeveralMenuCalculation(1, userMenuViewer.price_2);
+        ExportInterfaceMenuPrintCount(1, userMenuViewer.totalNum_2);
+        totalSum += ExportInterfaceSeveralMenuCalculation(2, userMenuViewer.price_3);
+        ExportInterfaceMenuPrintCount(2, userMenuViewer.totalNum_3);
+        totalSum += ExportInterfaceSeveralMenuCalculation(3, userMenuViewer.price_4);
+        ExportInterfaceMenuPrintCount(3, userMenuViewer.totalNum_4);
+        totalSum += ExportInterfaceSeveralMenuCalculation(4, userMenuViewer.price_5);
+        ExportInterfaceMenuPrintCount(4, userMenuViewer.totalNum_5);
+        totalSum += ExportInterfaceSeveralMenuCalculation(5, userMenuViewer.price_6);
+        ExportInterfaceMenuPrintCount(5, userMenuViewer.totalNum_6);*/
 
         userMenuViewer.totalPrice.setText(totalSum + "");
+    }
+
+    public void ExportInterfaceViewer(){
+        ExportInterfaceSeveralMenuCalculation(0, userMenuViewer.price_1);
+        ExportInterfaceMenuPrintCount(0, userMenuViewer.totalNum_1);
+        ExportInterfaceSeveralMenuCalculation(1, userMenuViewer.price_2);
+        ExportInterfaceMenuPrintCount(1, userMenuViewer.totalNum_2);
+        ExportInterfaceSeveralMenuCalculation(2, userMenuViewer.price_3);
+        ExportInterfaceMenuPrintCount(2, userMenuViewer.totalNum_3);
+        ExportInterfaceSeveralMenuCalculation(3, userMenuViewer.price_4);
+        ExportInterfaceMenuPrintCount(3, userMenuViewer.totalNum_4);
+        ExportInterfaceSeveralMenuCalculation(4, userMenuViewer.price_5);
+        ExportInterfaceMenuPrintCount(4, userMenuViewer.totalNum_5);
+        ExportInterfaceSeveralMenuCalculation(5, userMenuViewer.price_6);
+        ExportInterfaceMenuPrintCount(5, userMenuViewer.totalNum_6);
     }
 
 }
