@@ -25,18 +25,7 @@ public class UserMenuViewer extends Frame {
 
     TouchCountEvent countEvent;
 
-    int[] count;
-
-
-
     public UserMenuViewer(){
-
-        count = new int[6];
-
-        for(int i =0; i < 6; i++) {
-            count[i] = 0;
-        }
-
 
         panel_1 = new JPanel();
         panel_2 = new JPanel();
@@ -49,7 +38,7 @@ public class UserMenuViewer extends Frame {
 
         menu_1 = new JLabel("다가미김밥");
         minus_1 = new JButton("-");
-        totalNum_1 = new JTextField("" + count[0]);
+        totalNum_1 = new JTextField("0");
         plus_1 = new JButton("+");
         plus_1.setActionCommand("plus_1");
         minus_1.setActionCommand("minus_1");
@@ -57,7 +46,7 @@ public class UserMenuViewer extends Frame {
 
         menu_2 = new JLabel("참치로얄김밥");
         minus_2 = new JButton("-");
-        totalNum_2 = new JTextField("",2);
+        totalNum_2 = new JTextField("0",2);
         plus_2 = new JButton("+");
         plus_2.setActionCommand("plus_2");
         minus_2.setActionCommand("minus_2");
@@ -65,7 +54,7 @@ public class UserMenuViewer extends Frame {
 
         menu_3 = new JLabel("매운멸치쌈");
         minus_3 = new JButton("-");
-        totalNum_3 = new JTextField("",2);
+        totalNum_3 = new JTextField("0",2);
         plus_3 = new JButton("+");
         plus_3.setActionCommand("plus_3");
         minus_3.setActionCommand("minus_3");
@@ -73,7 +62,7 @@ public class UserMenuViewer extends Frame {
 
         menu_4 = new JLabel("소고기롤");
         minus_4 = new JButton("-");
-        totalNum_4 = new JTextField("",2);
+        totalNum_4 = new JTextField("0",2);
         plus_4 = new JButton("+");
         plus_4.setActionCommand("plus_4");
         minus_4.setActionCommand("minus_4");
@@ -81,7 +70,7 @@ public class UserMenuViewer extends Frame {
 
         menu_5 = new JLabel("에그샌드위치");
         minus_5 = new JButton("-");
-        totalNum_5 = new JTextField("",2);
+        totalNum_5 = new JTextField("0",2);
         plus_5 = new JButton("+");
         plus_5.setActionCommand("plus_5");
         minus_5.setActionCommand("minus_5");
@@ -89,7 +78,7 @@ public class UserMenuViewer extends Frame {
 
         menu_6 = new JLabel("탄산음료");
         minus_6 = new JButton("-");
-        totalNum_6 = new JTextField("",2);
+        totalNum_6 = new JTextField("0",2);
         plus_6 = new JButton("+");
         plus_6.setActionCommand("plus_6");
         minus_6.setActionCommand("minus_6");
@@ -214,8 +203,6 @@ public class UserMenuViewer extends Frame {
         panel_2.setBounds(10,330,410,70);
         panel_2.setBorder(new TitledBorder(null,"총금액"));
         frame.add(panel_2);
-
-
 
 
         frame.setVisible(true);

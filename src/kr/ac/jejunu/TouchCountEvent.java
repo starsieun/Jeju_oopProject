@@ -12,128 +12,81 @@ public class TouchCountEvent implements ActionListener {
     UserMenuViewer userMenuViewer;
     Calculation calculation;
 
-    int menu1_price;
-    int totalSum;
-
-    int[] menu_price;
-
-    //int count = 0;
-
     public TouchCountEvent(UserMenuViewer userMenuViewer){
         this.userMenuViewer = userMenuViewer;
-       menu_price = new int[]{
-               2500,
-               4500,
-               4500,
-               4500,
-               4500,
-               4500
-        };
-
-
-
+        this.calculation = new Calculation();
     }
 
     @Override
     public void actionPerformed(ActionEvent e ) {
-
-
-
         switch (e.getActionCommand()){
             case "plus_1":
-                userMenuViewer.count[0] ++;
+                calculation.plus(0);
                 break;
 
             case "minus_1":
-                minus(0);
+                calculation.minus(0);
                 break;
             case "plus_2":
-                userMenuViewer.count[1] ++;
+                calculation.plus(1);
                 break;
 
             case "minus_2":
-                minus(1);
+                calculation.minus(1);
                 break;
             case "plus_3":
-                userMenuViewer.count[2] ++;
+                calculation.plus(2);
                 break;
 
             case "minus_3":
-                minus(2);
+                calculation.minus(2);
                 break;
             case "plus_4":
-                userMenuViewer.count[3] ++;
+                calculation.plus(3);
                 break;
 
             case "minus_4":
-                minus(3);
+                calculation.minus(3);
                 break;
             case "plus_5":
-                userMenuViewer.count[4] ++;
+                calculation.plus(4);
                 break;
 
             case "minus_5":
-                minus(4);
+                calculation.minus(4);
                 break;
             case "plus_6":
-                userMenuViewer.count[5] ++;
+                calculation.plus(5);
                 break;
 
             case "minus_6":
-                minus(5);
+                calculation.minus(5);
                 break;
-
-
         }
-        menuTotalCalculation();
-           /*if (e.getSource() == userMenuViewer.plus_1){
-               userMenuViewer.count ++;
-                menuOnePrintCount();
-                menuCalculation();
-               menuTotalCalculation(menu1_sum);
-
-            } else if (e.getSource() == userMenuViewer.minus_1){
-           userMenuViewer.count --;
-            menuOnePrintCount();
-               menuCalculation();
-        } else {
-                userMenuViewer.count = 0;
-               menuOnePrintCount();
-               menuCalculation();
-            }*/
-        }
-
-    private void minus(int i) {
-        if(userMenuViewer.count[i] > 0)
-            userMenuViewer.count[i]--;
+        refresh();
     }
 
+
+
     public void menuOnePrintCount(int i, JTextField totalNum){
-            int num = userMenuViewer.count[i];
+            int num = calculation.getCount(i);
             totalNum.setText(num + "");
-        }
+    }
+
+
 
     public int menuCalculation(int i, JTextField price_1){
-
         int menu_sum;
-        /*switch (n){
-            case menu1_sum:
-                menu1_sum = menu1_price * userMenuViewer.count;
-                userMenuViewer.price_1.setText(menu1_sum + "");
-            case menu2_sum:
-                menu2_sum = menu2_price * userMenuViewer.count;
-                userMenuViewer.price_2.setText(menu2_sum + "");
-        }*/
-
-        menu_sum = menu_price[i] * userMenuViewer.count[i];
+        menu_sum = calculation.getMenuTotalInformation(i);
         price_1.setText(menu_sum + "");
 
         return menu_sum;
 
     }
 
-    public void menuTotalCalculation(){
 
+
+    public void refresh(){
         int totalSum = 0;
 
         totalSum += menuCalculation(0, userMenuViewer.price_1);
@@ -148,7 +101,6 @@ public class TouchCountEvent implements ActionListener {
         menuOnePrintCount(4, userMenuViewer.totalNum_5);
         totalSum += menuCalculation(5, userMenuViewer.price_6);
         menuOnePrintCount(5, userMenuViewer.totalNum_6);
-
 
         userMenuViewer.totalPrice.setText(totalSum + "");
     }
