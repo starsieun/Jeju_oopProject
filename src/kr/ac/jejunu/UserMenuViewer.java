@@ -2,6 +2,8 @@ package kr.ac.jejunu;
 import javax.swing.*;
 import javax.swing.border.TitledBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * Created by SeJong on 2017-06-14.
@@ -17,15 +19,19 @@ public class UserMenuViewer extends Frame {
     JButton plus_1,plus_2,plus_3,plus_4,plus_5,plus_6;
     JButton minus_1,minus_2,minus_3,minus_4,minus_5,minus_6;
 
+
     JTextField totalNum_1,totalNum_2,totalNum_3,totalNum_4,totalNum_5,totalNum_6;
     JTextField price_1,price_2,price_3,price_4,price_5,price_6;
 
+    JTextField tableNumber;
+    JLabel tableNumber_1;
     JLabel totalPriceName_1,totalPriceName_2;
     JTextField totalPrice;
 
     TouchCountEvent countEvent;
 
     public UserMenuViewer(){
+
 
         panel_1 = new JPanel();
         panel_2 = new JPanel();
@@ -84,6 +90,10 @@ public class UserMenuViewer extends Frame {
         minus_6.setActionCommand("minus_6");
         price_6 = new JTextField("",100);
 
+
+        tableNumber = new JTextField("",2);
+        tableNumber_1 = new JLabel("테이블의");
+
         totalPriceName_1 = new JLabel("음식의 총 금액은");
         totalPrice = new JTextField("",100);
         totalPriceName_2 = new JLabel("입니다.");
@@ -95,7 +105,7 @@ public class UserMenuViewer extends Frame {
     public void UserViewerSetBox(){
 
         frame.setLayout(null);
-        frame.setSize(445,470);
+        frame.setSize(445,500);
 
         label_1.setBounds(30,30,100,30);
         frame.add(label_1,SwingConstants.CENTER);
@@ -173,8 +183,6 @@ public class UserMenuViewer extends Frame {
         plus_5.addActionListener(countEvent);
         plus_6.addActionListener(countEvent);
 
-
-
         price_1.setBounds(320,70,80,30);
         frame.add(price_1);
         price_2.setBounds(320,110,80,30);
@@ -193,14 +201,19 @@ public class UserMenuViewer extends Frame {
         panel_1.setBorder(new TitledBorder(null, "메뉴"));
         frame.add(panel_1);
 
-        totalPriceName_1.setBounds(30,350,100,30);
+        tableNumber.setBounds(30,350,100,30);
+        frame.add(tableNumber);
+        tableNumber_1.setBounds(140,350,100,30);
+        frame.add(tableNumber_1);
+
+        totalPriceName_1.setBounds(30,390,100,30);
         frame.add(totalPriceName_1);
-        totalPrice.setBounds(140,350,100,30);
+        totalPrice.setBounds(140,390,100,30);
         frame.add(totalPrice);
-        totalPriceName_2.setBounds(250,350,100,30);
+        totalPriceName_2.setBounds(250,390,100,30);
         frame.add(totalPriceName_2);
 
-        panel_2.setBounds(10,330,410,70);
+        panel_2.setBounds(10,330,410,110);
         panel_2.setBorder(new TitledBorder(null,"총금액"));
         frame.add(panel_2);
 
@@ -209,6 +222,11 @@ public class UserMenuViewer extends Frame {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
 
+    public void UserVisible(){
+
+        UserViewerSetBox();
+        frame.setVisible(true);
+    }
 
 
 }

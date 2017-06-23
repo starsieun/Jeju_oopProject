@@ -11,10 +11,12 @@ public class DishMenuContents {
 
     DishMenuContents(){
 
-       /* userTable = new UserTable();
-        userTable.UserTableViewerBox();*/
+        userTable = new UserTable();
+        userTable.UserTableViewerBox();
+/*
         userMenuViewer = new UserMenuViewer();
         userMenuViewer.UserViewerSetBox();
+*/
 
 
 

@@ -90,21 +90,6 @@ public class TouchCountEvent implements ActionListener {
     public void ExportInterfaceTotalMenuCalculation(){
         int totalSum;
         totalSum = calculation.getMenuTotalPrice();
-       /* int totalSum = 0;
-
-        totalSum += ExportInterfaceSeveralMenuCalculation(0, userMenuViewer.price_1);
-        ExportInterfaceMenuPrintCount(0, userMenuViewer.totalNum_1);
-        totalSum += ExportInterfaceSeveralMenuCalculation(1, userMenuViewer.price_2);
-        ExportInterfaceMenuPrintCount(1, userMenuViewer.totalNum_2);
-        totalSum += ExportInterfaceSeveralMenuCalculation(2, userMenuViewer.price_3);
-        ExportInterfaceMenuPrintCount(2, userMenuViewer.totalNum_3);
-        totalSum += ExportInterfaceSeveralMenuCalculation(3, userMenuViewer.price_4);
-        ExportInterfaceMenuPrintCount(3, userMenuViewer.totalNum_4);
-        totalSum += ExportInterfaceSeveralMenuCalculation(4, userMenuViewer.price_5);
-        ExportInterfaceMenuPrintCount(4, userMenuViewer.totalNum_5);
-        totalSum += ExportInterfaceSeveralMenuCalculation(5, userMenuViewer.price_6);
-        ExportInterfaceMenuPrintCount(5, userMenuViewer.totalNum_6);*/
-
         userMenuViewer.totalPrice.setText(totalSum + "");
     }
 
